@@ -9,8 +9,8 @@ private:
 
 public:
     DVD(int cod, std::string titulo, int qtd, int categoria);
-    double valor_locacao(int dias) const override;
-    std::string tipo_locacao() const override;
+    double valor_locacao(int dias) const;
+    std::string tipo_locacao() const;
     void imprime_relatorio() override;
 };
 
