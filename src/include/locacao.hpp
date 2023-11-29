@@ -1,12 +1,8 @@
 #ifndef LOCACAO_HPP
 #define LOCACAO_HPP
 
-#include "cliente.hpp" 
-#include "cadastro_filmes.hpp"
-
 #include <vector>
 #include <string>
-#include <fstream>
 
 
 class Locacao 
@@ -14,22 +10,20 @@ class Locacao
 private:
 	// Atributos da classe 
 	int _id_locacao;
-	Cliente* _cliente;
+	std::string _cpf_cliente;
 	std::vector<int> _filmes_alugados;
 
 public:
-	// Construtor e destrutor
-	Locacao(int id, Cliente* cliente, std::vector<int> filmes);
-	Locacao::Locacao();
-	Locacao::~Locacao();
 
-	// Geters
-	int get_id_locacao();
-	CLiente* get_cliente_locacao();
-	std::vector<int> get_filmes_alugados();
+	// Métodos get
+	int get_id();
+	std::string get_cpf();
+	std::vector<Cint> get_filmes();
 
-	// Metodo para printar os status da locacao
-	void imprimir_locacao();
+	// Construtores e destrutor
+	Locacao(int id, std::string cpf, std::vector<int> filmes);
+	Locacao();
+	~Locacao();
 
 };
 
