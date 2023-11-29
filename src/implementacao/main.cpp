@@ -1,14 +1,16 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#icnlude <vector>
+#include <vector>
+
+//#include "estoque.hpp"
 
 int main()
-{
+{   
+    //Estoque_filmes* estoque = new Estoque_filmes();
     std::string nomeArquivo;
     bool exitLoop = false;
     std::string comando;
-	std::
 	std::string linha;
 
     while(!exitloop)
@@ -29,7 +31,7 @@ int main()
 				// Cadastro dos filmes
 				while (std::getline(arquivo, linha))
 				{
-			
+                    
 				}
 		}
 

@@ -2,7 +2,7 @@
 #include <iostream>
 
 Fita::Fita(int cod, std::string titulo, int qtd, bool fita_rebobinada)
-    : Cadastro_filme(cod, titulo, qtd), fita_rebobinada(fita_rebobinada) {}
+    : Filme(cod, titulo, qtd), fita_rebobinada(fita_rebobinada) {}
 
 bool Fita::rebobina() const {
     return fita_rebobinada;

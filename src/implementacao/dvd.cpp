@@ -2,7 +2,7 @@
 #include <iostream>
 
 DVD::DVD(int cod, std::string titulo, int qtd, int categoria)
-    : Cadastro_filme(cod, titulo, qtd), categoria(categoria) {}
+    : Filme(cod, titulo, qtd), categoria(categoria) {}
 
 double DVD::valor_locacao(int dias) const {
     if (categoria == Lancamento) {
