@@ -3,13 +3,14 @@
 
 #include "filme.hpp"
 
+#include <string>
+
 class DVD : public Filme {
 private:
-    int categoria;
+    std::string categoria;
 
 public:
-    DVD(int cod, std::string titulo, int qtd, int categoria);
-    enum Categoria { Lancamento = 1, Estoque = 2, Promocao = 3 };
+    DVD(int qtd, int cod, std::string titulo, std::string categoria);
     double valor_locacao(int dias) const;
     std::string tipo_locacao() const;
     void imprime_relatorio() override;

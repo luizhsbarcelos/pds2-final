@@ -5,10 +5,10 @@
 
 class Fita : public Filme {
 private:
-    bool fita_rebobinada;
+    bool fita_rebobinada = true;
 
 public:
-    Fita(int cod, std::string titulo, int qtd, bool fita_rebobinada);
+    Fita(int qtd, int cod, std::string titulo);
     bool rebobina() const;
     double valor_locacao(int dias) const;
     std::string tipo_locacao() const;
