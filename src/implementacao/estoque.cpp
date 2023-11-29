@@ -19,7 +19,7 @@ Cadastro_filme* Estoque_filmes::Pesquisa_filme(int codigo) {
             return filme_vetor;
         }
     }
-    std::cout << "Não encontrado." << std::endl;
+    std::cout << "ERRO: Filme " << codigo << " inexistente" << std::endl;
     return nullptr;
 }
 

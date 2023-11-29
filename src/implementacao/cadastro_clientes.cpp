@@ -15,7 +15,7 @@ std::string Cliente::obterCPF() const {
 // Implementação dos métodos da classe CadastroClientes
 void CadastroClientes::cadastrarCliente(std::string nome, std::string cpf) {
     // Verificar se o CPF já existe
-    if (existeClienteComCPF(cpf)) {
+    if (pesquisaCPF(cpf) != nullptr) {
         std::cout << "ERRO: CPF repetido\n";
     } else {
         // Adicionar novo cliente ao vetor
@@ -24,20 +24,27 @@ void CadastroClientes::cadastrarCliente(std::string nome, std::string cpf) {
     }
 }
 
-bool CadastroClientes::existeClienteComCPF(std::string cpf) const {
-    // Utilizar std::find_if para buscar um cliente com o mesmo CPF
+Cliente* CadastroClientes::pesquisaCPF(std::string cpf) const {
+    // Utilize std::find_if to buscar um cliente com o mesmo CPF
     auto it = std::find_if(clientes.begin(), clientes.end(),
-                           [cpf](const Cliente& cliente) {
-                               return cliente.obterCPF() == cpf;
-                           });
-    // Se encontrar, significa que o CPF já está cadastrado
-    return it != clientes.end();
+        [cpf](const Cliente& cliente) {
+            return cliente.getCPF() == cpf;
+        });
+
+    // Se encontrar, retorna o ponteiro para o cliente
+    if (it != clientes.end()) {
+        return const_cast<Cliente*>(&(*it));
+    } else {
+        // Se não encontrar, exibe uma mensagem de erro
+        std::cout << "ERRO: CPF inexistente" << std::endl;
+        return nullptr;
+    }
 }
 
 void CadastroClientes::listarClientes() const {
     std::cout << "Lista de Clientes:\n";
     // Iterar sobre o vetor de clientes e imprimir suas informações
     for (const auto& cliente : clientes) {
-        std::cout << cliente.obterCPF() << " - " << cliente.obterNome() << "\n";
+        std::cout << cliente.obterCPF() << " " << cliente.obterNome() << "\n";
     }
 }
