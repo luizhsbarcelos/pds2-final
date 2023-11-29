@@ -4,15 +4,15 @@
 #include <iostream>
 #include <string>
 
-class Cadastro_filme {
+class Filme {
 private:
     int cod;
     std::string titulo;
     int qtd;
 
 public:
-    Cadastro_filme(int cod, std::string titulo, int qtd);
-    virtual ~Cadastro_filme();
+    Filme(int cod, std::string titulo, int qtd);
+    virtual ~Filme();
     double valor_locacao(int dias) const;
     virtual void imprime_relatorio() = 0;
     virtual std::string tipo_locacao() const = 0;
