@@ -11,7 +11,7 @@ private:
     int qtd;
 
 public:
-    Filme(int cod, std::string titulo, int qtd);
+    Filme(int qtd, int cod, std::string titulo);
     virtual ~Filme();
     double valor_locacao(int dias) const;
     virtual void imprime_relatorio() = 0;

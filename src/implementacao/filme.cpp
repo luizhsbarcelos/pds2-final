@@ -1,22 +1,14 @@
-#include "./include/filme.hpp"
+#include "../include/filme.hpp"
 
-Filme::Filme(int cod, std::string titulo, int qtd)
-    : cod(cod), titulo(titulo), qtd(qtd) {}
+Filme::Filme(int qtd, int cod, std::string titulo)
+  : qtd(qtd), cod(cod), titulo(titulo) {}
 
 Filme::~Filme() {}
 
-double Filme::valor_locacao(int dias) const {
-    return 0; 
-}
+double Filme::valor_locacao(int dias) const { return 0; }
 
-int Filme::get_codigo() const {
-    return cod;
-}
+int Filme::get_codigo() const { return cod; }
 
-std::string Filme::get_titulo() const {
-    return titulo;
-}
+std::string Filme::get_titulo() const { return titulo; }
 
-int Filme::get_quantidade() const {
-    return qtd;
-}
+int Filme::get_quantidade() const { return qtd; }

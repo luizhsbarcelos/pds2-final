@@ -1,74 +1,73 @@
-#include <iostream>
+#include "../include/estoque.hpp"
 #include <fstream>
+#include <iostream>
 #include <string>
 #include <vector>
 
-//#include "estoque.hpp"
+using namespace std;
 
-int main()
-{   
-    //Estoque_filmes* estoque = new Estoque_filmes();
-    std::string nomeArquivo;
-    bool exitLoop = false;
-    std::string comando;
-	std::string linha;
+int main() {
+  // Estoque_filmes* estoque = new Estoque_filmes();
+  string nomeArquivo;
+  bool exitloop = false;
+  string comando;
+  string linha;
+  vector<string> linhas;
+  Estoque estoque;
 
-    while(!exitloop)
-    {
-    	std::cin >> comando;   
+  while (!exitloop) {
+    cin >> comando;
 
-        switch (comando)
-        {
-            case "LA":  // Ler arquivo de cadastro
-        		std::cin >> nomeArquivo;
-				std::ifstream arquivo(nomeArquivo);
-				// Checa se o arquivo está aberto
-				if (!arquivo.is_open())
-				{
-					std::cout << "ERRO: arquivo inexistente\n";
-					break;
-				}
-				// Cadastro dos filmes
-				while (std::getline(arquivo, linha))
-				{
-                    
-				}
-		}
+    if (comando == "LA") {
+      // Ler arquivo de cadastro
+      continue;
+    }
 
-            case "CF":
-                break;  // Cadastrar filme
+    else if (comando == "CF") {
+        estoque.Adiciona_filme();
+    }
 
-            case "RF":  // Remover filme
-                break;
-
-            case "LF":  // Listar filmes ordenador por código ou título
-                break;
-
-            case "CC":  // Cadastrar cliente
-                break;
-
-            case "RC":  // Remover cliente
-                break;
-
-            case "LC":  // Listar clientes ordenados por CPF ou nome
-                break;
-
-            case "AL":  // Alugar filme(s) 
-                break;
-
-            case "DV":  // Devolver filmes(s)
-                break;
-
-            case "FS":  // Finalizar sitema
-                exitloop == true;
-                break;
-
-            default:
-                exitloop == true;    // Default finaliza o sistema
-        }
+    else if (comando == "RF") {
+      // Remover filme
 
     }
 
+    else if (comando == "LF") {
+      // Listar filmes ordenador por código ou título
+      continue;
+    }
 
-    return 0;
+    else if (comando == "CC") {
+      // Cadastrar cliente
+      continue;
+    }
+
+    else if (comando == "RC") {
+      // Remover cliente
+      continue;
+    }
+
+    else if (comando == "LC") {
+      // Listar clientes ordenados por CPF ou nome
+      continue;
+    }
+
+    else if (comando == "AL") {
+      // Alugar filme(s)
+      continue;
+    }
+
+    else if (comando == "DV") {
+      // Devolver filmes(s)
+      continue;
+    }
+
+    else if (comando == "FS") {
+      // Finalizar sitema
+      exitloop = true;
+      continue;
+    }
+  }
+
+  return 0;
 }
