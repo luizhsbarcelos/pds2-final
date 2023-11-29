@@ -1,9 +1,9 @@
 #ifndef FITA_HPP
 #define FITA_HPP
 
-#include "cadastro_filmes.hpp"
+#include "filme.hpp"
 
-class Fita : public Cadastro_filme {
+class Fita : public Filme {
 private:
     bool fita_rebobinada;
 

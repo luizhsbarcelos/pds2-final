@@ -1,9 +1,9 @@
 #ifndef DVD_HPP
 #define DVD_HPP
 
-#include "cadastro_filmes.hpp"
+#include "filme.hpp"
 
-class DVD : public Cadastro_filme {
+class DVD : public Filme {
 private:
     int categoria;
 
