@@ -19,6 +19,7 @@ public:
     int get_codigo() const;
     std::string get_titulo() const;
     int get_quantidade() const;
+    
 };
 
 #endif

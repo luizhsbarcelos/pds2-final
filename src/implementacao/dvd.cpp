@@ -4,6 +4,10 @@
 DVD::DVD(int qtd, int cod, std::string titulo, std::string categoria)
     : Filme(qtd, cod, titulo), categoria(categoria) {}
 
+DVD::~DVD() {
+  std::cout << "Filme " << get_codigo() << " removido com sucesso\n";
+}
+
 double DVD::valor_locacao(int dias) const {
   if (categoria == "Lancamento") {
     return dias * 20;

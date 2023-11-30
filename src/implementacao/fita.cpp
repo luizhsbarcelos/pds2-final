@@ -3,6 +3,10 @@
 
 Fita::Fita(int qtd, int cod, std::string titulo) : Filme(qtd, cod, titulo) {}
 
+Fita::~Fita() {
+  std::cout << "Filme " << get_codigo() << " removido com sucesso\n";
+}
+
 bool Fita::rebobina() const { return fita_rebobinada; }
 
 double Fita::valor_locacao(int dias) const {

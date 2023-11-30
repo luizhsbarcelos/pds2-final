@@ -44,6 +44,8 @@ void Arquivo::conta_filmes() {
   return;
 }
 
+std::vector<std::string> Arquivo::get_vector_linhas() { return _vector_linhas; }
+
 int Arquivo::get_qtd_filmes() { return qtd_filmes_arquivo; }
 
 Arquivo::Arquivo() {}

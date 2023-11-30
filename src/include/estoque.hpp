@@ -10,11 +10,11 @@ private:
     std::vector<Filme*> lista_filmes;
 
 public:
-    void Adiciona_filme(Filme* filme);
-void Adiciona_filme();
+    void Adiciona_filme(std::vector<std::string>& filmes);
     void Remove_filme(int codigo);
     Filme* Pesquisa_filme(int codigo);
     void Imprime_relatorio();
+    void listar_filmes();
 };
 
 #endif 
