@@ -12,8 +12,8 @@ std::string Cliente::obterCPF() const {
     return cpf;
 }
 
-// Implementação dos métodos da classe CadastroClientes
-void CadastroClientes::cadastrarCliente(std::string nome, std::string cpf) {
+// Implementação dos métodos da classe ControleClientes
+void ControleClientes::cadastrarCliente(std::string nome, std::string cpf) {
     // Verificar se o CPF já existe
     if (pesquisaCPF(cpf) != nullptr) {
         std::cout << "ERRO: CPF repetido\n";
@@ -24,7 +24,7 @@ void CadastroClientes::cadastrarCliente(std::string nome, std::string cpf) {
     }
 }
 
-Cliente* CadastroClientes::pesquisaCPF(std::string cpf) const {
+Cliente* ControleClientes::pesquisaCPF(std::string cpf) const {
     // Utilize std::find_if to buscar um cliente com o mesmo CPF
     auto it = std::find_if(clientes.begin(), clientes.end(),
         [cpf](const Cliente& cliente) {
@@ -41,7 +41,7 @@ Cliente* CadastroClientes::pesquisaCPF(std::string cpf) const {
     }
 }
 
-void CadastroClientes::listarClientes() const {
+void ControleClientes::listarClientes() const {
     std::cout << "Lista de Clientes:\n";
     // Iterar sobre o vetor de clientes e imprimir suas informações
     for (const auto& cliente : clientes) {

@@ -51,38 +51,41 @@ int main() {
 
     else if (comando == "LF") {
       // Listar filmes ordenador por código ou título
-      continue;
+      estoque->listar_filmes();
     }
 
     else if (comando == "CC") {
       // Cadastrar cliente
-      continue;
+      
     }
 
     else if (comando == "RC") {
       // Remover cliente
-      continue;
+      
     }
 
     else if (comando == "LC") {
       // Listar clientes ordenados por CPF ou nome
-      continue;
+      
     }
 
     else if (comando == "AL") {
       // Alugar filme(s)
-      continue;
+      
     }
 
     else if (comando == "DV") {
       // Devolver filmes(s)
-      continue;
+      
     }
 
     else if (comando == "FS") {
       // Finalizar sitema
       exitloop = true;
-      continue;
+    }
+    else {
+      exitlopp = true;
+      cout << "ERRO: Comando inválido\n";
     }
   }
 

@@ -16,21 +16,21 @@ public:
     Cliente(std::string nome, std::string cpf);
 
     // Métodos getters
-    std::string obterNome() const;
-    std::string obterCPF() const;
+    std::string get_nome() const;
+    std::string get_CPF() const;
 };
 
 // Classe para o cadastro de clientes
-class CadastroClientes {
+class ControleClientes {
 private:
-    std::vector<Cliente> clientes;
+    static std::vector<Cliente*> lista_clientes;
 
 public:
     // Método para cadastrar um novo cliente
     void cadastrarCliente(std::string nome, std::string cpf);
 
     // Método para verificar se um CPF já está cadastrado
-    bool existeClienteComCPF(std::string cpf) const;
+    bool pesquisaCPF(std::string cpf) const;
 
     // Método para listar todos os clientes
     void listarClientes() const;

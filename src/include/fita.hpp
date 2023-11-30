@@ -12,7 +12,7 @@ public:
     ~Fita();
     bool rebobina() const;
     double valor_locacao(int dias) const;
-    std::string tipo_locacao() const;
+    std::string tipo_midia() const;
     void imprime_relatorio() override;
 };
 

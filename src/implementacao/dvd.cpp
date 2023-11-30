@@ -22,9 +22,10 @@ double DVD::valor_locacao(int dias) const {
   }
 }
 
-std::string DVD::tipo_locacao() const { return "DVD"; }
+std::string DVD::tipo_midia() const { return "DVD"; }
 
 void DVD::imprime_relatorio() {
-  std::cout << "DVD - Codigo: " << get_codigo() << ", Titulo: " << get_titulo()
-            << ", Categoria: " << categoria << "\n";
+  std::cout << get_codigo() << " " << get_titulo()
+            << " " << get_quantidade() << " " << tipo_midia() << "\n";
+  return;
 }

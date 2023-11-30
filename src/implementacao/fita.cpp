@@ -13,9 +13,10 @@ double Fita::valor_locacao(int dias) const {
   return 5 * dias + (fita_rebobinada ? 0 : 2);
 }
 
-std::string Fita::tipo_locacao() const { return "FITA"; }
+std::string Fita::tipo_midia() const { return "FITA"; }
 
 void Fita::imprime_relatorio() {
-  std::cout << "FITA - Codigo: " << get_codigo() << ", Titulo: " << get_titulo()
-            << ", Rebobinada: " << (fita_rebobinada ? "Sim" : "Nao") << "\n";
+  std::cout << get_codigo() << " " << get_titulo()
+            << " " << get_quantidade() << " " << tipo_midia() << "\n";
+  return;
 }
