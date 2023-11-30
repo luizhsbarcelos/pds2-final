@@ -1,3 +1,4 @@
+#include "../include/arquivo.hpp"
 #include "../include/estoque.hpp"
 #include <fstream>
 #include <iostream>
@@ -8,23 +9,23 @@ using namespace std;
 
 int main() {
   // Estoque_filmes* estoque = new Estoque_filmes();
-  string nomeArquivo;
   bool exitloop = false;
   string comando;
-  string linha;
-  vector<string> linhas;
-  Estoque estoque;
+
+  Estoque *estoque = new Estoque();
 
   while (!exitloop) {
     cin >> comando;
 
     if (comando == "LA") {
       // Ler arquivo de cadastro
-      continue;
+      Arquivo arquivo_obj;
+      arquivo_obj.ler_arquivo();
+
     }
 
     else if (comando == "CF") {
-        estoque.Adiciona_filme();
+      estoque.Adiciona_filme();
     }
 
     else if (comando == "RF") {
@@ -69,5 +70,6 @@ int main() {
     }
   }
 
+  delete estoque;
   return 0;
 }
