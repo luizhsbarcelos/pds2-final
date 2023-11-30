@@ -4,19 +4,27 @@
 #include <string>
 #include <vector>
 
+// Definição fora da classe para uso indepentente do objetos
+
 class Arquivo {
 private:
+  int qtd_filmes_arquivo = 0;
   std::string _nome_arquivo;
-  std::string _path_arquivo = "../data/";
   std::vector<std::string> _vector_linhas;
   std::string _linha;
 
 public:
   void ler_arquivo();
-  std::vector<std::string> get_linha();
-    
+  void conta_filmes();
+  int get_qtd_filmes();
+  // Método estático para ser acessado sem necessidade de objeto
+  static std::vector<std::string> separa_palavras(std::string str);
+  // Construtor e destrutor default
+  Arquivo();
+  ~Arquivo();
+
 }
 #endif
 
 
-
+// retornar um vectro<string> palavras
