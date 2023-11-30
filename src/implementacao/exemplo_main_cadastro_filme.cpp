@@ -1,5 +1,5 @@
 int main() {
-    Estoque_filmes estoque;
+    Estoque estoque;
 
     std::ifstream arquivo("estoque.txt");
     if (arquivo.is_open()) {

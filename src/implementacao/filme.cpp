@@ -1,9 +1,7 @@
 #include "../include/filme.hpp"
 
 Filme::Filme(int qtd, int cod, std::string titulo)
-  : qtd(qtd), cod(cod), titulo(titulo) {}
-
-Filme::~Filme() {}
+    : qtd(qtd), cod(cod), titulo(titulo) {}
 
 double Filme::valor_locacao(int dias) const { return 0; }
 

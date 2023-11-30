@@ -16,12 +16,14 @@ public:
   void ler_arquivo();
   void conta_filmes();
   int get_qtd_filmes();
+  std::vector<std::string> get_vector_linhas();
   // Método estático para ser acessado sem necessidade de objeto
   static std::vector<std::string> separa_palavras(std::string str);
   // Construtor e destrutor default
   Arquivo();
   ~Arquivo();
 
-}
+};
+
 #endif
 
