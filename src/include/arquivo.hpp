@@ -4,7 +4,6 @@
 #include <string>
 #include <vector>
 
-// Definição fora da classe para uso indepentente do objetos
 
 class Arquivo {
 private:
@@ -26,5 +25,3 @@ public:
 }
 #endif
 
-
-// retornar um vectro<string> palavras
