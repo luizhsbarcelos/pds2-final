@@ -7,7 +7,7 @@
 
 // Libera o espaço de memória alocado para os filmes
 Estoque::~Estoque() {
-  for (Filme *it : _lista_filmes) {
+  for (Filme *it : lista_filmes) {
     delete it;
   }
 }

@@ -1,4 +1,5 @@
 #include "../include/arquivo.hpp"
+#include "../include/cadastro_clientes.hpp"
 #include "../include/estoque.hpp"
 #include <fstream>
 #include <iostream>
@@ -11,6 +12,7 @@ int main() {
   // Estoque_filmes* estoque = new Estoque_filmes();
   bool exitloop = false;
   string comando;
+  string linhaInput;
 
   Estoque *estoque = new Estoque();
 
@@ -36,7 +38,6 @@ int main() {
 
     else if (comando == "CF") {
       // Obtem a linha com informações de cadastro
-      string linhaInput;
       getline(cin, linhaInput);
       vector<string> infoFilme = Arquivo::separa_palavras(linhaInput);
       estoque->Adiciona_filme(infoFilme);
@@ -56,21 +57,21 @@ int main() {
 
     else if (comando == "CC") {
       // Cadastrar cliente
+      ControleClientes::cadastrarCliente();
 
-    }
-
-    else if (comando == "RC") {
+    } else if (comando == "RC") {
       // Remover cliente
+      ControleClientes::removerCliente();
 
     }
 
     else if (comando == "LC") {
       // Listar clientes ordenados por CPF ou nome
-
+      ControleClientes::listarClientes();
     }
 
     else if (comando == "AL") {
-      // Alugar filme(s)
+      // Alugar filmes
 
     }
 
