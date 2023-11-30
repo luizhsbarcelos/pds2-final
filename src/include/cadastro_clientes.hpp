@@ -11,6 +11,8 @@ private:
     std::string nome;
     std::string cpf;
 
+  
+
 public:
     // Construtor para inicializar um cliente
     Cliente(std::string nome, std::string cpf);
@@ -23,17 +25,17 @@ public:
 // Classe para o cadastro de clientes
 class ControleClientes {
 private:
-    static std::vector<Cliente*> lista_clientes;
+    static std::vector<Cliente*> lista_de_clientes;
 
 public:
     // Método para cadastrar um novo cliente
-    void cadastrarCliente(std::string nome, std::string cpf);
+    static void cadastrarCliente(std::string nome, std::string cpf);
 
     // Método para verificar se um CPF já está cadastrado
-    bool pesquisaCPF(std::string cpf) const;
+    static Cliente* pesquisaCPF(std::string cpf) const;
 
     // Método para listar todos os clientes
-    void listarClientes() const;
+    static void listarClientes() const;
 };
 
 #endif  // CADASTRO_CLIENTES_HPP

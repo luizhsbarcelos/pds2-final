@@ -7,10 +7,10 @@
 
 // Libera o espaço de memória alocado para os filmes
 Estoque::~Estoque() {
-  for (Filme* it : _lista_filmes) {
+  for (Filme *it : _lista_filmes) {
     delete it;
   }
-} 
+}
 
 void Estoque::Adiciona_filme(std::vector<std::string> &filme) {
 
@@ -49,7 +49,7 @@ void Estoque::Remove_filme(int codigo) {
     if (codigo == (*it)->get_codigo()) {
       delete *it;
       lista_filmes.erase(it);
-      std::cout << "Filme: " << codigo << "removido com sucesso\n"; 
+      std::cout << "Filme: " << codigo << "removido com sucesso\n";
       return;
 
     } else {
@@ -82,33 +82,35 @@ void Estoque::relatorio_estoque() {
 void Estoque::listar_filmes() {
   char input;
   std::cin >> input;
-  
+
   switch (input) {
-    case 'C':
-      // Organiza o estoque por código em ordem crescente
-      std::sort(lista_filmes.begin(), lista_filmes.end(), [] (const Filme *a, const Filme *b) {
-        return a->get_codigo() < b->get_codigo();
-      });
-      // Imprime estoque organizado
-      for (Filme* it : lista_filmes) {
-        it->imprime_relatorio();
-      }
-      break;
-  
-    case 'T':
-      // Organiza o estoque por título em ordem alfabética
-      std::sort(lista_filmes.begin(), lista_filmes.end(), [] (const Filme *a, const Filme *b) {
-        return a->get_titulo() < b->get_titulo();
-      });
-      // Imprime estoque organizado
-      for (Filme* it : lista_filmes) {
-        it->imprime_relatorio();
-      }
-      break;
-  
-    default:
-      std::cout << "ERRO: Tipo de ordenação inválido\n";
-      break;
+  case 'C':
+    // Organiza o estoque por código em ordem crescente
+    std::sort(lista_filmes.begin(), lista_filmes.end(),
+              [](const Filme *a, const Filme *b) {
+                return a->get_codigo() < b->get_codigo();
+              });
+    // Imprime estoque organizado
+    for (Filme *it : lista_filmes) {
+      it->imprime_relatorio();
+    }
+    break;
+
+  case 'T':
+    // Organiza o estoque por título em ordem alfabética
+    std::sort(lista_filmes.begin(), lista_filmes.end(),
+              [](const Filme *a, const Filme *b) {
+                return a->get_titulo() < b->get_titulo();
+              });
+    // Imprime estoque organizado
+    for (Filme *it : lista_filmes) {
+      it->imprime_relatorio();
+    }
+    break;
+
+  default:
+    std::cout << "ERRO: Tipo de ordenação inválido\n";
+    break;
   }
   return;
 }

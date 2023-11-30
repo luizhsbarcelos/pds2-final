@@ -56,34 +56,33 @@ int main() {
 
     else if (comando == "CC") {
       // Cadastrar cliente
-      
+
     }
 
     else if (comando == "RC") {
       // Remover cliente
-      
+
     }
 
     else if (comando == "LC") {
       // Listar clientes ordenados por CPF ou nome
-      
+
     }
 
     else if (comando == "AL") {
       // Alugar filme(s)
-      
+
     }
 
     else if (comando == "DV") {
       // Devolver filmes(s)
-      
+
     }
 
     else if (comando == "FS") {
       // Finalizar sitema
       exitloop = true;
-    }
-    else {
+    } else {
       exitlopp = true;
       cout << "ERRO: Comando inválido\n";
     }
