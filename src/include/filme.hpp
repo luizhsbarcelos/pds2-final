@@ -1,5 +1,5 @@
-#ifndef CADASTRO_FILME_HPP
-#define CADASTRO_FILME_HPP
+#ifndef FILME_HPP
+#define FILME_HPP
 
 #include <iostream>
 #include <string>
@@ -19,7 +19,8 @@ public:
     int get_codigo() const;
     std::string get_titulo() const;
     int get_quantidade() const;
-    
+
 };
 
 #endif
+
