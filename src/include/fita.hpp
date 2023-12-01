@@ -9,11 +9,11 @@ private:
 
 public:
     Fita(int qtd, int cod, std::string titulo);
-    ~Fita();
+    virtual ~Fita();
     bool rebobina() const;
     double valor_locacao(int dias) const;
     std::string tipo_midia() const;
     void imprime_relatorio() override;
 };
 
-#endif 
+#endif
