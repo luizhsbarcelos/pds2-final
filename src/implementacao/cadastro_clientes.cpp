@@ -16,11 +16,7 @@ std::string Cliente::get_CPF() const { return cpf; }
 //----------------------------------------------------------------//
 
 // Implementação dos métodos da classe ControleClientes
-void ControleClientes::cadastrarCliente() {
-  std::string cpf;
-  std::cin >> cpf;
-  std::string nome;
-  std::cin >> nome;
+void ControleClientes::cadastrarCliente(std::string cpf, std::string nome) {
 
   // Verificar se o CPF já existe
   if (pesquisaCPF(cpf) != nullptr) {
@@ -34,9 +30,8 @@ void ControleClientes::cadastrarCliente() {
   }
 }
 
-void ControleClientes::removerCliente() {
-  std::string cpf;
-  std::cin >> cpf;
+void ControleClientes::removerCliente(string cpf) {
+  
   // Verificar se o CPF existe
   Cliente *aux;
   aux = pesquisaCPF(cpf);

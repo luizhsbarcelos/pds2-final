@@ -18,7 +18,7 @@ public:
 	// Métodos get
 	int get_id();
 	std::string get_cpf();
-	std::vector<Cint> get_filmes();
+	std::vector<int> get_filmes();
 
 	// Construtores e destrutor
 	Locacao(int id, std::string cpf, std::vector<int> filmes);

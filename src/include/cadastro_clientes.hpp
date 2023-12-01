@@ -30,8 +30,8 @@ private:
 
 public:
     // Método para cadastrar/remover um novo cliente
-    static void cadastrarCliente();
-    static void removerCliente();
+    static void cadastrarCliente(std::string cpf, std::string nome);
+    static void removerCliente(std::string cpf);
 
     // Método para verificar se um CPF já está cadastrado
     static Cliente* pesquisaCPF(std::string cpf);
