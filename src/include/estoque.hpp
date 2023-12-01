@@ -1,6 +1,5 @@
 #ifndef ESTOQUE_HPP
 #define ESTOQUE_HPP
-
 #include <vector>
 #include <string>
 #include "filme.hpp"
@@ -18,4 +17,4 @@ public:
     void listar_filmes();
 };
 
-#endif 
+#endif
