@@ -1,4 +1,4 @@
-#include "../include/dvd.hpp"
+#include "dvd.hpp"
 #include <iostream>
 
 DVD::DVD(int qtd, int cod, std::string titulo, std::string categoria)
