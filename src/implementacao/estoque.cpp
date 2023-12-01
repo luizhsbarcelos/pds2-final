@@ -1,6 +1,6 @@
-#include "../include/estoque.hpp"
-#include "../include/dvd.hpp"
-#include "../include/fita.hpp"
+#include "estoque.hpp"
+#include "dvd.hpp"
+#include "fita.hpp"
 
 #include <algorithm>
 #include <iostream>
