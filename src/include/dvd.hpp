@@ -1,8 +1,6 @@
 #ifndef DVD_HPP
 #define DVD_HPP
-
 #include "filme.hpp"
-
 #include <string>
 
 class DVD : public Filme {
@@ -11,10 +9,10 @@ private:
 
 public:
     DVD(int qtd, int cod, std::string titulo, std::string categoria);
-    ~DVD();
+    virtual ~DVD();
     double valor_locacao(int dias) const;
     std::string tipo_midia() const;
     void imprime_relatorio() override;
 };
 
-#endif 
+#endif
