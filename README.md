@@ -22,7 +22,7 @@ O projeto é dividido em três partes:
   - src/implementacao: A pasta 'implementacao' possui os arquivos com os códigos, ou seja, os arquivos que contém as implementações desses códigos. 
   - src/data: A pasta 'data' possui os arquivos que são usados para testar o programa.
 
-# Instrucoes para Entrada e Saída
+# Instruções para Entrada e Saída
 O programa possui um caso teste no arquivo, mas o usuário também pode inserir os comandos manualmente e o sistema imprime os relatórios, mensagens de confirmação, erros, etc.
   - Comandos de entrada do programa:
     ```
