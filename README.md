@@ -18,12 +18,14 @@ O projeto é dividido em três partes:
 
 # Arquivos do programa
   Os arquivos do programa podem ser encontrados na pasta src
-  - src/include: A pasta 'include' possui os arquivos cabeçalhos, ou seja, os arquivos headers (.hpp) para implementação.
-  - src/implementacao: A pasta 'implementacao' possui os arquivos com os códigos, ou seja, os arquivos que contém as implementações desses códigos. 
-  - src/data: A pasta 'data' possui os arquivos que são usados para testar o programa.
+  - project/include: A pasta 'include' possui os arquivos cabeçalhos, ou seja, os arquivos headers (.hpp) para implementação.
+  - project/src: A pasta 'implementacao' possui os arquivos com os códigos, ou seja, os arquivos que contém as implementações desses códigos. 
+  - project/data: A pasta 'data' possui os arquivos que são usados para testar o programa.
+  - project/build: A pasta build contém os arquivos objeto criados na compilação.
 
-# Instruções para Entrada e Saída
+# Instrucoes para Entrada e Saída
 O programa possui um caso teste no arquivo, mas o usuário também pode inserir os comandos manualmente e o sistema imprime os relatórios, mensagens de confirmação, erros, etc.
+OBS: Para funcionar, basta apenas rodar o controle locadora. Se necessário, use makefile.
   - Comandos de entrada do programa:
     ```
     LA     //Lê o arquivo
@@ -65,3 +67,4 @@ Bernardo Martins de Castro Rossetti  - 2018050243
 Geovani Aguilar Paixão               - 2022035636
 João Aparecido de Brito              - 2021027680
 Luiz Henrique Silveira Barcelos      - 2017105893
+```
