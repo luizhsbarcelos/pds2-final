@@ -1,14 +1,12 @@
-#include "dvd.hpp"
+#include "../include/dvd.hpp"
 #include <iostream>
 
 DVD::DVD(int qtd, int cod, std::string titulo, std::string categoria)
     : Filme(qtd, cod, titulo), categoria(categoria) {}
 
-DVD::~DVD() {
-  std::cout << "Filme " << get_codigo() << " removido com sucesso\n";
-}
+DVD::~DVD() {}
 
-double DVD::valor_locacao(int dias) const {
+double DVD::valor_locacao(int dias) {
   if (categoria == "Lancamento") {
     return dias * 20;
   }
@@ -20,6 +18,13 @@ double DVD::valor_locacao(int dias) const {
   } else {
     return 0;
   }
+}
+
+bool DVD::valida_categoria(std::string cat) {
+  if (cat == "Lancamento" || cat == "Estoque" || cat == "Promocao") {
+    return true;
+  }
+  return false;
 }
 
 std::string DVD::tipo_midia() const { return "DVD"; }

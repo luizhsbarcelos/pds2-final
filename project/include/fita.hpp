@@ -11,9 +11,9 @@ public:
     Fita(int qtd, int cod, std::string titulo);
     virtual ~Fita();
     bool rebobina() const;
-    double valor_locacao(int dias) const;
-    std::string tipo_midia() const;
+    double valor_locacao(int dias) override;
+    std::string tipo_midia() const override;
     void imprime_relatorio() override;
 };
 
-#endif
+#endif 

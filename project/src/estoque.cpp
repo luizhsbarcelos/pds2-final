@@ -1,6 +1,7 @@
-#include "estoque.hpp"
-#include "dvd.hpp"
-#include "fita.hpp"
+#include "../include/estoque.hpp"
+#include "../include/controle_locacao.hpp"
+#include "../include/dvd.hpp"
+#include "../include/fita.hpp"
 
 #include <algorithm>
 #include <iostream>
@@ -12,46 +13,80 @@ Estoque::~Estoque() {
   }
 }
 
-void Estoque::Adiciona_filme(std::vector<std::string> &filme) {
+bool Estoque::Adiciona_filme(std::vector<std::string> &filme) {
 
-  if (filme.size() >= 4 && filme.size() <= 5) {
+  // Verificação se quantidade é válida
+  if (std::stoi(filme[2]) > 0) {
 
     // Verifica a existencia de outro filme com mesmo código
     for (auto it : lista_filmes) {
-      if (std::stoi(filme[1]) == it->get_codigo()) {
+      if (std::stoi(filme[2]) == it->get_codigo()) {
         std::cout << "ERRO: codigo repetido\n";
-        return;
+        return false;
       }
     }
     // Verifica se é DVD
-    if (filme.size() == 5 && filme[0] == "D") {
-      DVD *novoDvd =
-          new DVD(std::stoi(filme[1]), std::stoi(filme[2]), filme[3], filme[4]);
+    if ((filme[0] == "D") || (filme[0] == "d")) {
+
+      // Verificar se o filme possui nome composto
+      int tamanho = filme.size();
+
+      if (!(DVD::valida_categoria(filme[tamanho - 1]))) {
+        std::cout << "ERRO: categoria inválida\n";
+        return false;
+      }
+
+      std::string titulo;
+      for (int i = 3; i < (tamanho - 2); i++) {
+        titulo += filme[i] + " ";
+      }
+      titulo += filme[tamanho - 2];
+
+      DVD *novoDvd = new DVD(std::stoi(filme[1]), std::stoi(filme[2]), titulo,
+                             filme[tamanho - 1]);
       lista_filmes.push_back(novoDvd);
       std::cout << "Filme: " << novoDvd->get_codigo()
                 << " cadastrado com sucesso\n";
+      return true;
 
-      // Verifica se é DVD
-    } else if (filme.size() == 4 && filme[0] == "F") {
+      // Verifica se é fita
+    } else if ((filme[0] == "F") || (filme[0] == "f")) {
+
+      // Verificar se o filme possui nome composto
+      int tamanho = filme.size();
+      std::string titulo;
+      for (int i = 3; i < (tamanho - 1); i++) {
+        titulo += filme[i] + " ";
+      }
+      titulo += filme[tamanho - 1];
 
       Fita *novaFita =
-          new Fita(std::stoi(filme[1]), std::stoi(filme[2]), filme[3]);
+          new Fita(std::stoi(filme[1]), std::stoi(filme[2]), titulo);
       lista_filmes.push_back(novaFita);
+      std::cout << "Filme: " << novaFita->get_codigo()
+                << " cadastrado com sucesso\n";
+      return true;
     } else {
-      std::cout << "ERRO: Dados incorretos\n";
+      std::cout << "ERRO: dados incorretos\n";
     }
+  } else {
+    std::cout << "ERRO: dados incorretos\n";
   }
-  return;
+  return false;
 }
 
 void Estoque::Remove_filme(int codigo) {
   for (auto it = lista_filmes.begin(); it != lista_filmes.end(); it++) {
     if (codigo == (*it)->get_codigo()) {
-      delete *it;
-      lista_filmes.erase(it);
-      std::cout << "Filme: " << codigo << "removido com sucesso\n";
-      return;
-
+      // Verificar se o Filme está alugado
+      if (ControleLocacao::buscaFilmeLocacao(codigo) == nullptr) {
+        delete *it;
+        lista_filmes.erase(it);
+        std::cout << "Filme: " << codigo << " removido com sucesso\n";
+        return;
+      } else {
+        std::cout << "ERRO: Locacao pendente\n";
+      }
     } else {
       std::cout << "ERRO: codigo inexistente\n";
     }
@@ -82,6 +117,11 @@ void Estoque::relatorio_estoque() {
 void Estoque::listar_filmes() {
   char input;
   std::cin >> input;
+
+  if (lista_filmes.empty()) {
+    std::cout << "Nenhum filme cadastrado\n";
+    return;
+  }
 
   switch (input) {
   case 'C':

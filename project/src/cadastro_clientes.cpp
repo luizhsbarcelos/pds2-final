@@ -1,9 +1,12 @@
 #include "../include/cadastro_clientes.hpp"
+#include "../include/controle_locacao.hpp"
 
 #include <algorithm>
 #include <cctype>
 #include <string>
 #include <vector>
+
+std::vector<Cliente *> ControleClientes::lista_de_clientes;
 
 // Implementação dos métodos da classe Cliente
 Cliente::Cliente(std::string cpf, std::string nome) : nome(nome), cpf(cpf) {}
@@ -30,24 +33,30 @@ void ControleClientes::cadastrarCliente(std::string cpf, std::string nome) {
   }
 }
 
-void ControleClientes::removerCliente(string cpf) {
-  
+void ControleClientes::removerCliente(std::string cpf) {
   // Verificar se o CPF existe
   Cliente *aux;
   aux = pesquisaCPF(cpf);
   if (aux != nullptr) {
-    // Usa find para achar o iterador contendo o CPF
-    auto it =
-        std::find(lista_de_clientes.begin(), lista_de_clientes.end(), aux);
-    if (it != lista_de_clientes.end()) {
-      lista_de_clientes.erase(it);
+    // Verificar se o CPF possui locação
+    if(ControleLocacao::buscaClienteLocacao(cpf) == nullptr){
+      // Usa find para achar o iterador contendo o CPF
+      auto it =
+          std::find(lista_de_clientes.begin(), lista_de_clientes.end(), aux);
+      if (it != lista_de_clientes.end()) {
+        lista_de_clientes.erase(it);
 
-      std::cout << "Cliente: " << cpf << " removido com sucesso\n";
-      // Delete memória alocada
-      delete aux;
+        std::cout << "Cliente: " << cpf << " removido com sucesso\n";
+        // Delete memória alocada
+        delete aux;
+        return;
+      }
+      std::cout << "ERRO: CPF inexistente\n";
+    } else {
+      std::cout << "ERRO: Locacao pendente\n";
     }
-    return;
   }
+  return;
 }
 
 Cliente *ControleClientes::pesquisaCPF(std::string cpf) {
@@ -71,7 +80,6 @@ Cliente *ControleClientes::pesquisaCPF(std::string cpf) {
       return (it);
     }
   }
-  std::cout << "ERRO: CPF inexistente\n";
   return nullptr;
 }
 
@@ -99,11 +107,11 @@ void ControleClientes::listarClientes() {
               });
     // Imprime clientes organizados
     for (Cliente *it : lista_de_clientes) {
-      std::cout << it->get_CPF() << " " << it->get_nome() << std::
+      std::cout << it->get_CPF() << " " << it->get_nome() << std::endl;
     }
     break;
 
-    default;
+  default:
     std::cout << "ERRO: Tipo de ordenação inválido\n";
     break;
   }

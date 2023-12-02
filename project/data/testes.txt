@@ -1,0 +1,93 @@
+## Testes individuais a se fazer um por vez ##
+----------
+Teste 1 : Leitura do arquivo com filmes cadastrados
+
+LA filmes.txt
+----------
+
+----------
+Teste 2 : Leitura de filmes repetidos
+
+LA filmes.txt
+LA filmes.txt
+----------
+
+----------
+Teste 3 : Cadastro manual de filmes e remoção
+
+CF F 3 109 TheGodfather
+CF D 1 108 Batman Promocaoopcaoinvalida
+CF D 23 13 As crônicas de Nárnia: o leão, a feiticeira e o guarda-roupas Estoque
+RM 108
+RM 109
+----------
+
+----------
+Teste 4 : Remoção de filmes não cadastrados
+
+CF F 3 109 TheGodfather
+RM 108
+RM 1232
+RM 1
+RM 109
+----------
+
+----------
+Teste 5 : Cadastro e remoção de clientes
+
+CC 12345678901 João
+CC 67890123456 Carla
+CC 89012345678 Rafael
+RC 12345678901
+RC 67890123456
+RC 89012345678
+----------
+
+----------
+Teste 6 : Cadastro de clientes com cpf não numérico
+
+CC 102313xx123 João
+CC abdce12312 Carla
+CC 23534x2132 Rafael
+----------
+
+----------
+Teste 7 : Remoção de clientes não cadastrados
+
+RC 12345678901
+RC 67890123456
+----------
+
+----------
+Teste 8 : Locacao e devolução de filmes
+
+CC 12345678901 João
+CF F 3 109 TheGodfather
+CF D 3 108 Batman Promocao
+AL 12345678901 109 108
+----------
+
+----------
+Teste 9 : Locação e devolução de filmes não cadastrados 
+
+CC 12345678901 João
+CF F 3 007 MissaoImpossivel
+AL 12345678901 004 
+DV 12345678901 10
+----------
+
+----------
+Teste 10 : Remoção de filmes enquanto estão com locacao pendente
+
+CC 12345678901 João
+CF F 3 007 MissaoImpossivel
+AL 12345678901 007
+RF 007
+----------
+
+----------
+Teste 11 : Cadastro de DVD com categoria invalida
+
+CF D 23 13 As crônicas de Nárnia: o leão, a feiticeira e o guarda-roupas Invalid
+----------
+

@@ -1,0 +1,7 @@
+ F 3 101 Avatar
+ D 3 102 Avengers Lancamento
+ F 3 103 Titanic
+ D 3 104 Argo Estoque
+ F 3 105 JurassicPark
+ D 3 106 ForrestGump Promocao
+ F 3 107 Spotlight
