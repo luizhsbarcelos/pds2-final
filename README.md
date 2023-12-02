@@ -69,4 +69,3 @@ Bernardo Martins de Castro Rossetti  - 2018050243
 Geovani Aguilar Paixão               - 2022035636
 João Aparecido de Brito              - 2021027680
 Luiz Henrique Silveira Barcelos      - 2017105893
-```

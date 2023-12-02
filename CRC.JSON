@@ -1,0 +1,127 @@
+[
+  {
+    "name": "Filme",
+    "superclasses": "",
+    "subclasses": "DVD e FITA",
+    "type": 1,
+    "responsibilities": [
+      "Valor Locação",
+      "Imprimir Relatório",
+      "",
+      ""
+    ],
+    "collaborators": [
+      "Filme"
+    ]
+  },
+  {
+    "name": "DVD",
+    "superclasses": "Filme",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Valor Locação",
+      "Tipo Mídia",
+      "Imprimir Relatório"
+    ],
+    "collaborators": [
+      "Filme",
+      "DVD",
+      ""
+    ]
+  },
+  {
+    "name": "Fita",
+    "superclasses": "Filme",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Valor locação",
+      "Rebobina",
+      "Tipo Mídia",
+      "Imprimir Relatório"
+    ],
+    "collaborators": [
+      "Filme",
+      "Fita"
+    ]
+  },
+  {
+    "name": "Estoque",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Adicionar Filme",
+      "Remover Filme",
+      "Pesquisar filme",
+      "Listar Filmes",
+      "Relatório Estoque"
+    ],
+    "collaborators": [
+      "Filme"
+    ]
+  },
+  {
+    "name": "Cliente",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Atribuir Nome",
+      "Atribuir CPF"
+    ],
+    "collaborators": [
+      "Clientes"
+    ]
+  },
+  {
+    "name": "ControleClientes",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Cadastrar Cliente",
+      "Remover Cliente",
+      "Pesquisar CPF",
+      "Listar Clientes"
+    ],
+    "collaborators": [
+      "Clientes"
+    ]
+  },
+  {
+    "name": "Controle Locação",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Adicionar Locação",
+      "Remover Locação",
+      "Pesquisar Cliente",
+      "Pesquisar Filme",
+      "Relatório Locação",
+      "Relatório Devolução",
+      "Locações em curso"
+    ],
+    "collaborators": [
+      "Cliente",
+      "Filme"
+    ]
+  },
+  {
+    "name": "Locação",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Gerencia Estoque ",
+      "Gerencia Locação"
+    ],
+    "collaborators": [
+      "Cliente",
+      "Estoque",
+      "Filme"
+    ]
+  }
+]
