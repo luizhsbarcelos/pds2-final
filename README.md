@@ -25,7 +25,9 @@ O projeto é dividido em três partes:
 
 # Instrucoes para Entrada e Saída
 O programa possui um caso teste no arquivo, mas o usuário também pode inserir os comandos manualmente e o sistema imprime os relatórios, mensagens de confirmação, erros, etc.
-OBS: Para funcionar, basta apenas rodar o controle locadora. Se necessário, use makefile.
+
+- OBS: Para funcionar, basta apenas rodar o controle locadora. Se necessário, use makefile.
+
   - Comandos de entrada do programa:
     ```
     LA     //Lê o arquivo
